@@ -6,8 +6,8 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20081112
-Release:	%manbo_mkrel 2
+Version:	20090120
+Release:	%manbo_mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
@@ -40,6 +40,10 @@ done
 for dir in `find . -type d | sed -e 's|^\.||' -e 's|^/||'`; do
 	rmdir -p --ignore-fail-on-non-empty $dir
 done
+
+# remove files provided in iwlwifi-*-ucode* packages
+rm -f LICENCE.iwlwifi_firmware
+rm -f iwlwifi-{{3945,4965}-2,5000-1}.ucode
 
 %install
 rm -rf %{buildroot}
