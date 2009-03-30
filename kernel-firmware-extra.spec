@@ -7,7 +7,7 @@
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
 Version:	20090212
-Release:	%manbo_mkrel 1
+Release:	%manbo_mkrel 2
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
@@ -15,12 +15,7 @@ URL:    	http://www.kernel.org/
 # by simply cloning it, doing a rm -rf linux-firmware/.git/ 
 # and tar -cjvf kernel-firmware-extra-version.tar.bz2 linux-firmware
 Source0: 	kernel-firmware-extra-%{version}.tar.bz2
-BuildRequires:	kernel-firmware >= 20080922-2mnb2
-Conflicts:	kernel-firmware < 20080922-2mnb2
-Obsoletes:	korg1212-firmware
-Obsoletes:	maestro3-firmware
-Obsoletes:	sb16-firmware
-Obsoletes:	yamaha-firmware
+BuildRequires:	kernel-firmware >= 20090111-2mnb2
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
