@@ -6,16 +6,17 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20090212
-Release:	%manbo_mkrel 2
+Version:	20090514
+Release:	%manbo_mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
 # kernel-firmware tarball is generated from the git tree mentioned above, 
 # by simply cloning it, doing a rm -rf linux-firmware/.git/ 
-# and tar -cjvf kernel-firmware-extra-version.tar.bz2 linux-firmware
-Source0: 	kernel-firmware-extra-%{version}.tar.bz2
-BuildRequires:	kernel-firmware >= 20090111-2mnb2
+# and tar -Ycf kernel-firmware-extra-version.tar.lzma linux-firmware
+Source: 	kernel-firmware-extra-%{version}.tar.lzma
+BuildRequires:	kernel-firmware >= 20090418-1mnb2
+Conflicts:	kernel-firmware < 20090418-1mnb2
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
@@ -38,7 +39,16 @@ done
 
 # remove files provided in iwlwifi-*-ucode* packages
 rm -f LICENCE.iwlwifi_firmware
-rm -f iwlwifi-{{3945,4965}-2,5000-1}.ucode
+rm -f iwlwifi-{{3945,4965,5150}-2,5000-1}.ucode
+
+# remove files provided in rt*-firmware packages
+rm -f LICENSE.ralink-firmware.txt
+rm -f rt2561{,s}.bin rt2661.bin rt28{6,7}0.bin rt73.bin
+
+# remove unwanted source files
+# FIXME: usbdux*.bin firmware should be in kernel-firmware or another
+# separate package (not in non-free), usbdux*.bin is GPL licensed
+rm -rf usbdux
 
 %install
 rm -rf %{buildroot}
