@@ -7,7 +7,7 @@
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
 Version:	20090514
-Release:	%manbo_mkrel 1
+Release:	%manbo_mkrel 2
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
@@ -46,6 +46,7 @@ rm -f LICENSE.ralink-firmware.txt
 rm -f rt2561{,s}.bin rt2661.bin rt28{6,7}0.bin rt73.bin
 
 # remove unwanted source files
+rm -f dsp56k/bootstrap.asm keyspan_pda/*.S
 # FIXME: usbdux*.bin firmware should be in kernel-firmware or another
 # separate package (not in non-free), usbdux*.bin is GPL licensed
 rm -rf usbdux
