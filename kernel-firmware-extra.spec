@@ -6,8 +6,8 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20090514
-Release:	%manbo_mkrel 2
+Version:	20090723
+Release:	%manbo_mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
@@ -15,8 +15,8 @@ URL:    	http://www.kernel.org/
 # by simply cloning it, doing a rm -rf linux-firmware/.git/ 
 # and tar -Ycf kernel-firmware-extra-version.tar.lzma linux-firmware
 Source: 	kernel-firmware-extra-%{version}.tar.lzma
-BuildRequires:	kernel-firmware >= 20090418-1mnb2
-Conflicts:	kernel-firmware < 20090418-1mnb2
+BuildRequires:	kernel-firmware >= 20090604-1mnb2
+Conflicts:	kernel-firmware < 20090604-1mnb2
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
