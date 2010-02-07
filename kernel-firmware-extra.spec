@@ -1,19 +1,19 @@
 #
 # This rpm is based on the git tree from:
-# git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git
+# git://git.kernel.org/pub/scm/linux/kernel/git/dwmw2/linux-firmware.git
 # version is date of the younger commit
 #
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20091117
+Version:	20100108
 Release:	%manbo_mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
-# kernel-firmware tarball is generated from the git tree mentioned above, 
-# by simply cloning it, doing a rm -rf linux-firmware/.git/ 
-# and tar -Ycf kernel-firmware-extra-version.tar.lzma linux-firmware
+# kernel-firmware tarball is generated from the git tree mentioned
+# above, by simply cloning it and doing:
+# tar --exclude-vcs -Ycf kernel-firmware-extra-version.tar.lzma linux-firmware
 Source: 	kernel-firmware-extra-%{version}.tar.lzma
 BuildRequires:	kernel-firmware >= 20090604-1mnb2
 Conflicts:	kernel-firmware < 20090604-1mnb2
