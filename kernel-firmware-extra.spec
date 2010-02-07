@@ -39,7 +39,7 @@ done
 
 # remove files provided in iwlwifi-*-ucode* packages
 rm -f LICENCE.iwlwifi_firmware
-rm -f iwlwifi-{{3945,4965,5150}-2,5000-1}.ucode
+rm -f iwlwifi-{1000-3,{3945,4965,5150}-2,5000-{1,2}}.ucode
 
 # remove files provided in rt*-firmware packages
 rm -f LICENSE.ralink-firmware.txt
