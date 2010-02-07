@@ -15,8 +15,8 @@ URL:    	http://www.kernel.org/
 # above, by simply cloning it and doing:
 # tar --exclude-vcs -Ycf kernel-firmware-extra-version.tar.lzma linux-firmware
 Source: 	kernel-firmware-extra-%{version}.tar.lzma
-BuildRequires:	kernel-firmware >= 20090604-1mnb2
-Conflicts:	kernel-firmware < 20090604-1mnb2
+BuildRequires:	kernel-firmware >= 20100107-1mnb2
+Conflicts:	kernel-firmware < 20100107-1mnb2
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
