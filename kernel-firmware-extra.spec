@@ -6,7 +6,7 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20100108
+Version:	20100429
 Release:	%manbo_mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
@@ -15,8 +15,8 @@ URL:    	http://www.kernel.org/
 # above, by simply cloning it and doing:
 # tar --exclude-vcs -Ycf kernel-firmware-extra-version.tar.lzma linux-firmware
 Source: 	kernel-firmware-extra-%{version}.tar.lzma
-BuildRequires:	kernel-firmware >= 20100107-1mnb2
-Conflicts:	kernel-firmware < 20100107-1mnb2
+BuildRequires:	kernel-firmware >= 20100217-1mnb2
+Conflicts:	kernel-firmware < 20100217-1mnb2
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
@@ -39,7 +39,11 @@ done
 
 # remove files provided in iwlwifi-*-ucode* packages
 rm -f LICENCE.iwlwifi_firmware
-rm -f iwlwifi-{1000-3,{3945,4965,5150}-2,5000-{1,2}}.ucode
+rm -f iwlwifi-{1000-3,{3945,4965,5150}-2,5000-{1,2},6000-4}.ucode
+
+# remove files provided in radeon-rlc-firmware
+rm -f LICENCE.radeon_rlc
+rm -f radeon/{CEDAR,CYPRESS,JUNIPER,R600,R700,REDWOOD}_rlc.bin
 
 # remove files provided in rt*-firmware packages
 rm -f LICENSE.ralink-firmware.txt
