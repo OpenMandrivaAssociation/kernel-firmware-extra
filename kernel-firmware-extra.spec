@@ -7,7 +7,7 @@
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
 Version:	20100429
-Release:	%manbo_mkrel 1
+Release:	%manbo_mkrel 2
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
@@ -47,7 +47,7 @@ rm -f radeon/{CEDAR,CYPRESS,JUNIPER,R600,R700,REDWOOD}_rlc.bin
 
 # remove files provided in rt*-firmware packages
 rm -f LICENSE.ralink-firmware.txt
-rm -f rt2561{,s}.bin rt2661.bin rt28{6,7}0.bin rt73.bin
+rm -f rt2561{,s}.bin rt2661.bin rt28{6,7}0.bin rt3090.bin rt73.bin
 
 # remove unwanted source files
 rm -f dsp56k/bootstrap.asm keyspan_pda/*.S
