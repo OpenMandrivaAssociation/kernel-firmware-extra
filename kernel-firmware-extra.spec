@@ -6,17 +6,17 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20100429
-Release:	%manbo_mkrel 2
+Version:	20100807
+Release:	%manbo_mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
 # kernel-firmware tarball is generated from the git tree mentioned
 # above, by simply cloning it and doing:
-# tar --exclude-vcs -Ycf kernel-firmware-extra-version.tar.lzma linux-firmware
-Source: 	kernel-firmware-extra-%{version}.tar.lzma
-BuildRequires:	kernel-firmware >= 20100217-1mnb2
-Conflicts:	kernel-firmware < 20100217-1mnb2
+# tar --exclude-vcs -Jcf kernel-firmware-extra-version.tar.xz linux-firmware
+Source: 	kernel-firmware-extra-%{version}.tar.xz
+BuildRequires:	kernel-firmware >= 20100804-1mnb2
+Conflicts:	kernel-firmware < 20100804-1mnb2
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
