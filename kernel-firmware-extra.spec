@@ -6,7 +6,7 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20100807
+Version:	20100911
 Release:	%manbo_mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
