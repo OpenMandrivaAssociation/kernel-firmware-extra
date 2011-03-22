@@ -6,7 +6,7 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20110125
+Version:	20110310
 Release:	%mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
@@ -15,8 +15,8 @@ URL:    	http://www.kernel.org/
 # above, by simply cloning it and doing:
 # tar --exclude-vcs -Jcf kernel-firmware-extra-version.tar.xz linux-firmware
 Source: 	kernel-firmware-extra-%{version}.tar.xz
-BuildRequires:	kernel-firmware >= 20101231-1
-Conflicts:	kernel-firmware < 20101231-1
+BuildRequires:	kernel-firmware >= 20110314-1
+Conflicts:	kernel-firmware < 20110314-1
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
@@ -39,11 +39,11 @@ done
 
 # remove files provided in iwlwifi-*-ucode* packages
 rm -f LICENCE.iwlwifi_firmware
-rm -f iwlwifi-{1000-3,{3945,4965,5150}-2,5000-{1,2},6000-4,6000g2{a,b}-5,6050-{4,5}}.ucode
+rm -f iwlwifi-{100-5,1000-3,{3945,4965,5150}-2,5000-{1,2,5},6000-4,6000g2{a,b}-5,6050-{4,5}}.ucode
 
-# remove files provided in radeon-rlc-firmware
+# remove all radeon files as they are provided by kernel-firmware and radeon-firmware
 rm -f LICENCE.radeon_rlc
-rm -f radeon/{BTC,CEDAR,CYPRESS,JUNIPER,R600,R700,REDWOOD,SUMO}_rlc.bin
+rm -rf radeon
 
 # remove files provided in rt*-firmware packages
 rm -f LICENSE.ralink-firmware.txt
@@ -68,5 +68,3 @@ rm -rf %{buildroot}
 %defattr(0644,root,root,0755)
 %doc LICENCE.*
 /lib/firmware/*
-
-
