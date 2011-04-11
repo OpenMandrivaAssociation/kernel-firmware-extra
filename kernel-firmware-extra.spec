@@ -7,7 +7,7 @@
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
 Version:	20110310
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
@@ -54,6 +54,14 @@ rm -f dsp56k/bootstrap.asm keyspan_pda/*.S
 # FIXME: usbdux*.bin firmware should be in kernel-firmware or another
 # separate package (not in non-free), usbdux*.bin is GPL licensed
 rm -rf usbdux
+
+# symlink brcm80211 firmwares according to what the driver expects
+pushd brcm/
+ln -s bcm4329-fullmac-4-218-248-5.bin bcm4329-fullmac-4.bin
+ln -s bcm4329-fullmac-4-218-248-5.txt bcm4329-fullmac-4.txt
+ln -s bcm43xx-0-610-809-0.fw bcm43xx-0.fw
+ln -s bcm43xx_hdr-0-610-809-0.fw bcm43xx_hdr-0.fw
+popd
 
 %install
 rm -rf %{buildroot}
