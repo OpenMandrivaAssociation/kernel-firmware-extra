@@ -6,7 +6,7 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20110428
+Version:	20110817
 Release:	%mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
@@ -15,8 +15,8 @@ URL:    	http://www.kernel.org/
 # above, by simply cloning it and doing:
 # tar --exclude-vcs -Jcf kernel-firmware-extra-version.tar.xz linux-firmware
 Source: 	kernel-firmware-extra-%{version}.tar.xz
-BuildRequires:	kernel-firmware >= 20110314-1
-Conflicts:	kernel-firmware < 20110314-1
+BuildRequires:	kernel-firmware >= 20110904
+Conflicts:	kernel-firmware < 20110904
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
@@ -39,7 +39,7 @@ done
 
 # remove files provided in iwlwifi-*-ucode* packages
 rm -f LICENCE.iwlwifi_firmware
-rm -f iwlwifi-{100-5,1000-3,{3945,4965,5150}-2,5000-{1,2,5},6000-4,6000g2{a,b}-5,6050-{4,5}}.ucode
+rm -f iwlwifi-{100-5,1000-{3,5},{3945,4965,5150}-2,5000-{1,2,5},6000-4,6000g2{a,b}-5,6050-{4,5}}.ucode
 
 # remove all radeon files as they are provided by kernel-firmware and radeon-firmware
 rm -f LICENCE.radeon_rlc
@@ -47,7 +47,7 @@ rm -rf radeon
 
 # remove files provided in rt*-firmware packages
 rm -f LICENSE.ralink-firmware.txt
-rm -f rt2561{,s}.bin rt2661.bin rt28{6,7}0.bin rt3090.bin rt73.bin
+rm -f rt2561{,s}.bin rt2661.bin rt28{6,7}0.bin rt3070.bin rt3090.bin rt73.bin
 
 # remove unwanted source files
 rm -f dsp56k/bootstrap.asm keyspan_pda/*.S
