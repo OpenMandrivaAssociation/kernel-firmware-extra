@@ -6,7 +6,7 @@
 
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
-Version:	20110817
+Version:	20120510
 Release:	%mkrel 1
 License:	Proprietary
 Group:  	System/Kernel and hardware
@@ -15,8 +15,8 @@ URL:    	http://www.kernel.org/
 # above, by simply cloning it and doing:
 # tar --exclude-vcs -Jcf kernel-firmware-extra-version.tar.xz linux-firmware
 Source: 	kernel-firmware-extra-%{version}.tar.xz
-BuildRequires:	kernel-firmware >= 20110904
-Conflicts:	kernel-firmware < 20110904
+BuildRequires:	kernel-firmware >= 20120218
+Conflicts:	kernel-firmware < 20120218
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildArch:	noarch
 
@@ -66,5 +66,4 @@ rm -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
-%doc LICENCE.*
 /lib/firmware/*
