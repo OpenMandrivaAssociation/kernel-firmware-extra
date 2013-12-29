@@ -7,7 +7,7 @@
 Summary:	Extra linux kernel firmware files
 Name:   	kernel-firmware-extra
 Version:	20130218
-Release:	1
+Release:	2
 License:	Proprietary
 Group:  	System/Kernel and hardware
 URL:    	http://www.kernel.org/
