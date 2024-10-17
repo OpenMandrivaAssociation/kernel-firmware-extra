@@ -10,7 +10,7 @@ Version:	20130218
 Release:	1
 License:	Proprietary
 Group:  	System/Kernel and hardware
-URL:    	http://www.kernel.org/
+URL:    	https://www.kernel.org/
 # kernel-firmware tarball is generated from the git tree mentioned
 # above, by simply cloning it and doing:
 # tar --exclude-vcs -Jcf kernel-firmware-extra-version.tar.xz linux-firmware
